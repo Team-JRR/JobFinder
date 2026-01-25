@@ -2,13 +2,13 @@ import React from "react";
 
 import StatusSection from "./StatusSection.jsx";
 
-//define columns names
+//Define columns names
 const jobStatus = ["applied", "interviewing", "offer", "rejected"];
 
-//job list accepts jobs prop from dashboard
-export default function JobList({jobs, onDelete, currentUser}){
+//Accepts props from dashboard
+export default function JobList({jobs, onDelete, currentUser, onUpdate}){
   return(
-    //side by side flex box style
+    //Side by side flex box style
     <div style={{ display: "flex", justifyContent: "space-between", marginTop: 20 }}>
       {/* for each status create a column */}
       {jobStatus.map((status) => {
@@ -22,7 +22,7 @@ export default function JobList({jobs, onDelete, currentUser}){
        //filter jobs and get ones w/ status matching column name
        jobs={jobs.filter(job => job.status === status)}
        onDelete={onDelete}
-       /*onUpdate={onUpdate}*/
+       onUpdate={onUpdate}
        />
       })}
     </div>

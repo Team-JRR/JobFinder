@@ -6,8 +6,8 @@ import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined
 import { useState } from "react";
 import axios from "axios";
 
-//accepts job prop from statusSection
-export default function JobListEntry ({job, currentUser, onDelete}){
+//Accepts job prop from statusSection
+export default function JobListEntry ({job, currentUser, onDelete, onUpdate}){
 
   // REPORTING STUFF
 
