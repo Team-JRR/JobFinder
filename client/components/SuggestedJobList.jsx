@@ -203,8 +203,7 @@ export default function SuggestedJobList({ jobs, getJobListings, userPrefs }) {
                 >
                   <Button
                     sx={{
-                      ml: "72px",
-                      display: "flex",
+                      mr: 1,
                       justifyContent: "center",
                       bgcolor: "#f49645ff"
                     }}
@@ -217,12 +216,6 @@ export default function SuggestedJobList({ jobs, getJobListings, userPrefs }) {
 
                   >
                     Apply To Job
-                  </Button>
-                </Box>
-                <Box sx={{}}>
-                  {/*Adds onClick functionality to this button to save listing, STRETCH GOAL*/}
-                  <Button title="Click to save listing" sx={{bgcolor: "#f49645ff"}}>
-                    <AddBox fontSize="large" />
                   </Button>
                 </Box>
               </CardActions>
