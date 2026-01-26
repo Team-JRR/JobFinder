@@ -147,8 +147,9 @@ export default function Dashboard ({ currentUser }) {
     }).then((updated) => {
        //get updated jobs data in response
       const updatedJob = updated.data;
-
+      //update jobs state
       setJobs(prevJobs => prevJobs.map(job =>
+        //replace job whos id === updated job id
         job._id === updatedJob._id ? updatedJob : job
     ))
     }).catch((err) => {
