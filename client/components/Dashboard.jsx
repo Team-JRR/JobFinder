@@ -212,7 +212,7 @@ export default function Dashboard ({ currentUser }) {
           <Button onClick={CreateJob} variant="contained" color="primary"> Save </Button>
         </DialogActions>
         </Dialog>
-        <JobList jobs={jobs} onUpdate={updateJob} onDelete={deleteJob} />
+        <JobList jobs={jobs} onUpdate={updateJob} onDelete={deleteJob} currentUser={currentUser} />
 
     </Box>
 
