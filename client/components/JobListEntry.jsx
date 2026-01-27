@@ -1,13 +1,15 @@
 import React from "react"
 import {Button} from "@mui/material"
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
-
+import LaunchTwoToneIcon from '@mui/icons-material/LaunchTwoTone';
+import Stack from '@mui/material/Stack';
+import Divider from '@mui/material/Divider';
 // We would not need this normally, but we need it to adapt based on report input.
 import { useState } from "react";
 import axios from "axios";
 
-//accepts job prop from statusSection
-export default function JobListEntry ({job, currentUser, onDelete}){
+//Accepts job prop from statusSection
+export default function JobListEntry ({job, currentUser, onDelete, onUpdate}){
 
   // REPORTING STUFF
 
@@ -131,13 +133,20 @@ export default function JobListEntry ({job, currentUser, onDelete}){
 
   return (
     <div style={{border: "1px solid #ddd", padding: 5, marginBottom: 5, borderRadius: 4}}>
-      {job.title}
-      <Button  size="small" color="error" onClick={() => onDelete(job._id)} sx={{ borderRadius: '1000px', m:1 }}><DeleteForeverOutlinedIcon /></Button>
-      {job.link && (<a href={job.link} target="_blank" rel="noopener noreferrer" style={{ fontSize: 15 }}>View Job Posting</a>)}
+      {`${'Added Job: '}`}{job.title}
+      <Button  color="error" onClick={() => onDelete(job._id)} sx={{ borderRadius: '1000px' }}><DeleteForeverOutlinedIcon fontSize="medium"/></Button>
+      {job.link && (<a href={job.link}style={{ fontSize: 60 }}><LaunchTwoToneIcon fontSize="small" color="default"/></a>)}
+      {/* {job.link && (<a href={job.link} target="_blank" rel="noopener noreferrer" style={{ fontSize: 15 }}>View Job Posting</a>)} */}
+      <Stack direction="row" divider={<Divider orientation="vertical" flexItem />} spacing={1}>
+      {<Button variant="outlined" sx={{ color: '#f49645ff', borderColor: '#f49645ff'}} onClick={() => onUpdate(job._id, 'interviewing')}> Move to Interviewing</Button>}
+      {<Button variant="outlined" sx={{ color: '#f49645ff', borderColor: '#f49645ff'}} onClick={() => onUpdate(job._id, 'applied')}> Move to Applied</Button>}
+      {<Button variant="outlined" sx={{ color: '#f49645ff', borderColor: '#f49645ff'}} onClick={() => onUpdate(job._id, 'offer')}> Move to Offer</Button>}
+      {<Button variant="outlined" sx={{ color: '#f49645ff', borderColor: '#f49645ff'}} onClick={() => onUpdate(job._id, 'rejected')}> Move to Rejected</Button>}
+      </Stack>
 
       <div>
         <Button variant="outlined"
-        sx={{ color: '#f49645ff', borderColor: '#f49645ff'}}
+        sx={{ color: 'rgb(244, 107, 69)', borderColor: 'rgb(239, 2, 2)'}}
             onClick={(event) => {
               handleReportSubmission(job.link);
             }}
