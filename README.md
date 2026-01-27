@@ -37,6 +37,26 @@ Sometimes, on virtual machines, Mongo won't know where to put its files, which w
 
 We used ESLint to enforce style. We used the base rules as our project hasn't yet necessitated special styling. Our code styling isn't strictly enforced just yet.
 
+## Known Issues
+
+When creating a job, if you put in something that is not a link as the job link, when trying to view the job link you'll be redirected to a blank page.
+
+Server endpoints are all in one file, which is bad practice.
+
+Some of the UI on the Dashboard is difficult to understand.
+
+## Ideas for Changes
+
+Add a section called 'Planning to Apply' to the job tracker.
+
+Allow users to put in a jobs location and/or their website, rather than just their website.
+
+Clicking on a job on the FindJobs page to see a further description should also give you a way to add the job to your tracker.
+
+Jobs should have descriptions as well, which the user can input to keep notes, or that can be pulled in from the AdZuna API.
+
+Find an automated way to approve user tags, rather than require the attention of an admin. For example, maybe if the tag produces more than a certain number of results, it gets accepted automatically.
+
 ## Built With
 
 * React
