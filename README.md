@@ -43,7 +43,7 @@ When creating a job, if you put in something that is not a link as the job link,
 
 Server endpoints are all in one file, which is bad practice.
 
-Some of the UI on the Dashboard is difficult to understand.
+Some of the UI on the Dashboard isn't user friendly, like all of the different status buttons being available at once, including ones for the current status.
 
 ## Ideas for Changes
 
